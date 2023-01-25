@@ -3,15 +3,15 @@ import "./topbar.css";
 import SearchIcon from '@mui/icons-material/Search';
 import PersonIcon from '@mui/icons-material/Person';
 import ChatIcon from '@mui/icons-material/Chat';
-import CircleNotificationsIcon from '@mui/icons-material/CircleNotifications';
 import CircleNotifications from "@mui/icons-material/CircleNotifications";
-
+import {Link} from "react-router-dom"
 export default function Topbar() {
   return ( 
   <div className="topbarContainer">
     <div className="topbarLeft">
-      <span className="logo">
-        I am Social</span> </div>
+      <Link to="/" style={{textDecoration: "none"}}>   <span className="logo">
+        I am Social</span></Link>
+    </div>
     <div className="topbarCenter"> 
     <div className="searchbar">
       <SearchIcon className="searchIcon"/>
