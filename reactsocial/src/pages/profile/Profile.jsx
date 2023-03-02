@@ -25,7 +25,7 @@ export default function Profile() {
     fetchUser();
   }, [username]);
   console.log("john lai bhetum");
-  console.log(user.CoverPicture);
+  console.log(user);
   return (
     <>
       <Topbar />
@@ -36,12 +36,20 @@ export default function Profile() {
             <div className="profileCover">
               <img
                 className="profileCoverImg"
-                src={user.CoverPicture || PF + "person/noCover.jpg"}
+                src={
+                  user.CoverPicture
+                    ? PF + user.CoverPicture
+                    : PF + "person/noCover.jpg"
+                }
                 alt=""
               />
               <img
                 className="profileUserImg"
-                src={user.profilePicture || PF + "person/noAvatar.jpeg"}
+                src={
+                  user.profilePicture
+                    ? user.profilePicture
+                    : PF + "person/noAvatar.jpeg"
+                }
                 alt=""
               />
             </div>
