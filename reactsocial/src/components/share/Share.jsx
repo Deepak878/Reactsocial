@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import PermMediaIcon from "@mui/icons-material/PermMedia";
 import LabelIcon from "@mui/icons-material/Label";
 import RoomIcon from "@mui/icons-material/Room";
+import CancelIcon from "@mui/icons-material/Cancel";
 import { useState } from "react";
 import axios from "axios";
 import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
@@ -71,7 +72,17 @@ export default function Share() {
             ref={desc}
           />
         </div>
-        <hr className="shareHr"></hr>
+        <hr className="shareHr" />
+        {file && (
+          <div className="shareImgContainer">
+            <img className="shareImg" src={URL.createObjectURL(file)} alt="" />
+            <CancelIcon
+              className="shareCancelImg"
+              onClick={() => setFile(null)}
+            />
+          </div>
+        )}
+
         <form className="shareBottom" onSubmit={submitHandler}>
           <div className="shareOptions">
             <div className="shareOption">
